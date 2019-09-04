@@ -119,7 +119,7 @@ def generate_config_files(type_, key, name="base", eval_mode=False):
     mkpath("config/{}".format(type_))
 
     with open("config/{}/config_{}.json".format(type_, key), "w") as f:
-        json.dump(baseq_config, f, indent=4)
+        json.dump(base_config, f, indent=4)
 
 
 def replace_params(base_config, changes):
