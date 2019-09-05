@@ -93,6 +93,7 @@ class GenerationDataLoader(adata.DataLoader):
             return True
 
         for split in self.data:
+            print('We are working on split:', split)
             file_name = map_name(split, self.opt.data)
 
             if split != "dev" or self.opt.data.devversion != "12":
