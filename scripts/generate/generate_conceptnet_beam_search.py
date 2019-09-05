@@ -24,11 +24,11 @@ import random
 parser = argparse.ArgumentParser()
 parser.add_argument("--generation_set_size", type=str, default='full', choices=["full", "human"])
 parser.add_argument("--device", type=int, default=0)
-parser.add_argument("--split", type=str, default="dev")
+parser.add_argument("--split", type=str, default="test")
 parser.add_argument("--beam", type=int, default=10)
 parser.add_argument("--seed", type=int, default=42)
 parser.add_argument("--experiment_num", type=str, default="0")
-parser.add_argument("--model_name", type=str, default="models/conceptnet-generation/iteration-500-100000/transformer/rel_language-trainsize_100-devversion_12-maxe1_10-maxe2_15/model_transformer-nL_12-nH_12-hSize_768-edpt_0.1-adpt_0.1-rdpt_0.1-odpt_0.1-pt_gpt-afn_gelu-npos_1-demb_F-init_pt-vSize_40545/exp_generation-seed_123-es_0-l2_0.01-vl2_T-lrsched_warmup_linear-lrwarm_0.002-clip_1-loss_nll-b2_0.999-b1_0.9-e_1e-08/bs_1-trick_0-smax_40-sample_beam-numseq_1-gs_full-es_full-categories_None/1e-05_adam_64_13500.pickle")
+parser.add_argument("--model_name", type=str, default="/home/hzhangal/Projects/comet-commonsense/models/conceptnet-generation/iteration-500-100000/transformer/rel_language-trainsize_100-devversion_12-maxe1_10-maxe2_15-maxr_5/model_transformer-nL_12-nH_12-hSize_768-edpt_0.1-adpt_0.1-rdpt_0.1-odpt_0.1-pt_gpt-afn_gelu-init_pt-vSize_40545/exp_generation-seed_123-l2_0.01-vl2_T-lrsched_warmup_linear-lrwarm_0.002-clip_1-loss_nll-b2_0.999-b1_0.9-e_1e-08/bs_1-smax_40-sample_greedy-numseq_1-gs_full-es_full/1e-05_adam_64_15500.pickle")
 parser.add_argument("--gen_len", type=int, default=100)
 
 args = parser.parse_args()
@@ -174,12 +174,7 @@ end_token = text_encoder.encoder["<END>"]
 
 # Make Eval File name -- can probably comment this if you're doing your
 # own file naming convention. I only include this to keep it consistent
-eval_file_name = args.model_name.replace("sample_greedy", "sample_{}".format(
-    args.decoding_strategy))
-
-eval_file_name = eval_file_name.replace("bs_1", "bs_{}".format(args.beam))
-eval_file_name = eval_file_name[:-7] + "/{}.pickle".format(split)
-eval_file_name = eval_file_name.replace("models/", "results/gens/")
+eval_file_name = 'results/O_beam_' + str(args.beam) + '.pickle'
 
 print("Saving generations to: {}".format(eval_file_name))
 
