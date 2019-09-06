@@ -38,7 +38,7 @@ if __name__ == "__main__":
         cfg.device = "cpu"
 
     data_for_predict = list()
-    with open('test_e.txt', 'r') as f:
+    with open('test.txt', 'r') as f:
         for line in f:
             tmp_words = line[:-1].split('\t')
             data_for_predict.append((tmp_words[0], tmp_words[1]))
@@ -53,7 +53,7 @@ if __name__ == "__main__":
             tmp_event, model, sampler, data_loader, text_encoder, tmp_relation, print_result=False)
         prediction_result.append(outputs)
 
-    with open('prediction_output.json', 'w') as f:
+    with open('original_result.json', 'w') as f:
         json.dump(prediction_result, f)
 
 
