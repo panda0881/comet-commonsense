@@ -50,7 +50,7 @@ if __name__ == "__main__":
         tmp_relation = tmp_pair[0]
         tmp_sampler = 'beam-10'
         outputs = interactive.get_conceptnet_sequence(
-            tmp_event, model, sampler, data_loader, text_encoder, tmp_relation)
+            tmp_event, model, sampler, data_loader, text_encoder, tmp_relation, print_result=False)
         prediction_result.append(outputs)
 
     with open('prediction_output.json', 'w') as f:

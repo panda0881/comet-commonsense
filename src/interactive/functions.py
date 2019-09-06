@@ -156,7 +156,7 @@ def set_atomic_inputs(input_event, category, data_loader, text_encoder):
     return batch
 
 
-def get_conceptnet_sequence(e1, model, sampler, data_loader, text_encoder, relation, force=False):
+def get_conceptnet_sequence(e1, model, sampler, data_loader, text_encoder, relation, , print_result = True, force=False):
     if isinstance(relation, list):
         outputs = {}
 
@@ -199,8 +199,8 @@ def get_conceptnet_sequence(e1, model, sampler, data_loader, text_encoder, relat
                 data_loader.max_e2)
 
         sequence_all['beams'] = sampling_result["beams"]
-
-        print_conceptnet_sequence(sequence_all)
+        if print_result:
+            print_conceptnet_sequence(sequence_all)
 
         return {relation: sequence_all}
 
