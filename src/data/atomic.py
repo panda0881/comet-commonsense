@@ -1,4 +1,4 @@
-import comet.utils.utils as utils
+import utils.utils as utils
 import src.data.utils as data_utils
 import src.data.config as cfg
 
