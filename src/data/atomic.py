@@ -1,5 +1,5 @@
 import utils.utils as utils
-import src.data.utils as data_utils
+import src.data.data_utils as data_utils
 import src.data.config as cfg
 
 import pandas
