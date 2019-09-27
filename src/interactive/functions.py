@@ -1,6 +1,6 @@
 import torch
 
-from src.data.utils import TextEncoder
+from src.data.data_utils import TextEncoder
 import src.data.config as cfg
 import src.data.data as data
 import src.models.models as models
