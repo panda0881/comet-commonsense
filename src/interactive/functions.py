@@ -6,7 +6,7 @@ import src.data.data as data
 import src.models.models as models
 from src.evaluate.sampler import BeamSampler, GreedySampler, TopKSampler
 
-import utils.utils as utils
+import comet.utils.utils as utils
 
 
 def load_model_file(model_file):
