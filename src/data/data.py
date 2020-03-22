@@ -1,9 +1,10 @@
+import utils.utils as utils
 import os
 import src.data.atomic as atomic_data
 import src.data.conceptnet as conceptnet_data
 import src.data.config as cfg
 
-import utils.utils as utils
+
 
 import pickle
 import torch
