@@ -1,5 +1,6 @@
-import utils.utils as utils
+
 import os
+import utils.utils as utils
 import src.data.atomic as atomic_data
 import src.data.conceptnet as conceptnet_data
 import src.data.config as cfg
