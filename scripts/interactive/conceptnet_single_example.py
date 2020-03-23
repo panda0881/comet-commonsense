@@ -4,7 +4,8 @@ import argparse
 import torch
 
 sys.path.append(os.getcwd())
-
+sys.path.append('/home/hzhangal/Projects/comet-commonsense/')
+import utils.utils as utils
 import src.data.data as data
 import src.data.config as cfg
 import src.interactive.functions as interactive
