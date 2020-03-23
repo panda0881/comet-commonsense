@@ -1,5 +1,8 @@
 
 import os
+import sys
+sys.path.append(os.getcwd())
+
 import utils.utils as utils
 import src.data.atomic as atomic_data
 import src.data.conceptnet as conceptnet_data
