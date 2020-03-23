@@ -1,5 +1,3 @@
-import sys
-sys.path.append('/home/hzhangal/Projects/comet-commonsense')
 import utils.utils as utils
 import src.data.data_utils as data_utils
 import src.data.config as cfg
